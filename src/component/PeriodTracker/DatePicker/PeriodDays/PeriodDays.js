@@ -8,11 +8,17 @@ import './PeriodDays.css'
      }
     
      addDays = () => {
-        this.setState({pDays:this.state.pDays+ 1})  
+         if (this.state.pDays + 1 !== 11 )  {
+            this.setState({pDays:this.state.pDays+ 1}) 
+            this.props.getPeriodDays(this.state.pDays.pDays); 
+         } 
      }
      minusDays = () => {
+         if (this.state.pDays - 1 !== -1 ) {
+            this.setState({pDays:this.state.pDays - 1})
+            this.props.getPeriodDays(this.state.pDays.pDays); 
+         }
          
-         this.setState({pDays:this.state.pDays - 1})
      }
     render() {
         return (

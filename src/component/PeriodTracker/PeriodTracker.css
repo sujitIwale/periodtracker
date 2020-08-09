@@ -18,3 +18,12 @@
 .box-3 {
     flex: 1;
 }
+.track-btn {
+    margin-left: 45%;
+    height: 45px;
+    width: 150px;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
