@@ -1,0 +1,16 @@
+.header {
+    background-color: rgb(195, 161, 226);
+    height: 60px;
+    
+}
+ li {
+    text-align: center;
+}
+.items p {
+  float: right;
+}
+ul {
+  display: inline-flex;
+  list-style: none;
+
+}

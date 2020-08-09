@@ -1,0 +1,20 @@
+.period-tracker {
+    background-color: rgb(214, 145, 180);
+}
+.tracker-inputs {
+    display: flex;
+    flex-direction: row ;
+
+}
+
+.box-1 {
+    flex: 1;
+}
+
+.box-2 {
+    flex: 1;
+}
+
+.box-3 {
+    flex: 1;
+}
