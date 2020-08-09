@@ -6,6 +6,7 @@ import './PeriodDays.css'
      state = {
          pDays: 0
      }
+    
      addDays = () => {
         this.setState({pDays:this.state.pDays+ 1})  
      }
