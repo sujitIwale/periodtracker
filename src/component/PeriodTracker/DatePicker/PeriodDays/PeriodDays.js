@@ -9,15 +9,17 @@ import './PeriodDays.css'
     
      addDays = () => {
          if (this.state.pDays + 1 !== 11 )  {
-            this.setState({pDays:this.state.pDays+ 1}) 
-            this.props.getPeriodDays(this.state.pDays.pDays); 
+            this.setState({pDays:this.state.pDays+ 1})  
+            this.props.getPeriodDays(this.state.pDays + 1 );
          } 
+        
      }
      minusDays = () => {
          if (this.state.pDays - 1 !== -1 ) {
             this.setState({pDays:this.state.pDays - 1})
-            this.props.getPeriodDays(this.state.pDays.pDays); 
+            this.props.getPeriodDays(this.state.pDays - 1 ); 
          }
+         
          
      }
     render() {
