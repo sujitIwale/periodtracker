@@ -1,16 +1,12 @@
 .header {
-    background-color: rgb(195, 161, 226);
-    height: 60px;
-    
+  background-color: rgb(195, 161, 226);
+  height: 60px;
+  margin: 0px 0px;
 }
- li {
-    text-align: center;
-}
-.items p {
-  float: right;
-}
-ul {
-  display: inline-flex;
-  list-style: none;
 
+h2 {
+  color: rgb(94, 71, 71);
+  text-align: center;
+  margin: 0px;
+  padding-top: 14px;
 }

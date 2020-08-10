@@ -1,45 +1,54 @@
-import React, { Component } from 'react';
-import AverageCycle from './AverageCycle/AverageCycle';
-import DatePicker from './DatePicker/DatePicker';
-import PeriodDays from './DatePicker/PeriodDays/PeriodDays';
-import './PeriodTracker.css';
+import React, { Component } from "react";
+import AverageCycle from "./AverageCycle/AverageCycle";
+import DatePicker from "./DatePicker/DatePicker";
+import PeriodDays from "./PeriodDays/PeriodDays";
+import "./PeriodTracker.css";
 
- class PeriodTracker extends Component {
-     state = {
-         pDays:0,
-         cycle:21,
-         date:null,
-         submitted:false
-     }
-     startTracking = () => {
-         this.props.passPdays(this.state.pDays);
-         this.props.passCycleDays(this.state.cycle);
-         this.props.showSchedule();
-         this.props.passDate(this.state.date);
-
-     } 
-     getPeriodDays = (days) => {
-         this.setState({pDays:days})
-     }
-     getCycleDays = (days) => {
-         this.setState({cycle:days})
-     }
-     getDate = (date) => {
-         this.setState({date:date})
-     } 
-    render() {
-        return (
-            <div className='period-tracker'>
-                <h1 style={{textAlign:'center'}} >PeriodTracker</h1>
-                <div className='tracker-inputs' >
-                   <div className='box-1' > <DatePicker getDate={this.getDate} /> </div>
-                   <div className='box-2'><PeriodDays  getPeriodDays={this.getPeriodDays} /> </div>
-                   <div className='box-3'><AverageCycle getCycleDays={this.getCycleDays} /> </div>
-                </div>
-                <button className='track-btn' onClick={this.startTracking} >Start Tracking </button>
-            </div>
-        )
-    }
+class PeriodTracker extends Component {
+  state = {
+    pDays: 0,
+    cycle: 21,
+    date: null,
+    submitted: false,
+    month: null,
+  };
+  startTracking = () => {
+    this.props.passPdays(this.state.pDays);
+    this.props.passCycleDays(this.state.cycle);
+    this.props.showSchedule();
+    this.props.passDate(this.state.date, this.state.month);
+  };
+  getPeriodDays = (days) => {
+    this.setState({ pDays: days });
+  };
+  getCycleDays = (days) => {
+    this.setState({ cycle: days });
+  };
+  getDate = (date, month) => {
+    this.setState({ date: date, month: month });
+  };
+  render() {
+    return (
+      <div className='period-tracker'>
+        <div className='tracker-inputs'>
+          <div className='box'>
+            <DatePicker getDate={this.getDate} />
+          </div>
+          <div className='box'>
+            <PeriodDays getPeriodDays={this.getPeriodDays} />
+          </div>
+          <div className='box'>
+            <AverageCycle getCycleDays={this.getCycleDays} />
+          </div>
+        </div>
+        <section className='tracking-section'>
+          <p className='track-btn' onClick={this.startTracking}>
+            Start Tracking
+          </p>
+        </section>
+      </div>
+    );
+  }
 }
 
 export default PeriodTracker;

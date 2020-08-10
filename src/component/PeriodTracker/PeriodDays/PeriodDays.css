@@ -1,0 +1,24 @@
+.Daycontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  margin: 20px;
+  padding: 20px;
+}
+.number {
+  font-size: 50px;
+}
+
+.icon {
+  padding: 10px;
+  color: rgb(141, 117, 117);
+}
+.icon:hover {
+  background-color: aqua;
+  border-radius: 100%;
+  transform: scale(1.2);
+  cursor: pointer;
+}

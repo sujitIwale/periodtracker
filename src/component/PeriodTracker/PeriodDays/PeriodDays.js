@@ -1,29 +1,28 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import "../PeriodDays/PeriodDays.css";
-
-class AverageCycle extends Component {
+import "./PeriodDays.css";
+class PeriodDays extends Component {
   state = {
-    cycle: 21,
+    pDays: 0,
   };
 
   addDays = () => {
-    if (this.state.cycle + 1 !== 41) {
-      this.setState({ cycle: this.state.cycle + 1 });
-      this.props.getCycleDays(this.state.cycle + 1);
+    if (this.state.pDays + 1 !== 11) {
+      this.setState({ pDays: this.state.pDays + 1 });
+      this.props.getPeriodDays(this.state.pDays + 1);
     }
   };
   minusDays = () => {
-    if (this.state.cycle - 1 !== 20) {
-      this.setState({ cycle: this.state.cycle - 1 });
-      this.props.getCycleDays(this.state.cycle - 1);
+    if (this.state.pDays - 1 !== -1) {
+      this.setState({ pDays: this.state.pDays - 1 });
+      this.props.getPeriodDays(this.state.pDays - 1);
     }
   };
   render() {
     return (
       <div>
-        <h2>3. HOW LONG IS YOUR MENSTRUAL CYCLE?</h2>
+        <h2>2. HOW MANY DAYS DID YOUR PERIOD LAST?</h2>
         <div className='Daycontainer'>
           <div className='box'>
             <FontAwesomeIcon
@@ -34,7 +33,7 @@ class AverageCycle extends Component {
             />
           </div>
           <div className='box number'>
-            <p>{this.state.cycle}</p>
+            <p>{this.state.pDays}</p>
           </div>
           <div className='box'>
             <FontAwesomeIcon
@@ -50,4 +49,4 @@ class AverageCycle extends Component {
   }
 }
 
-export default AverageCycle;
+export default PeriodDays;

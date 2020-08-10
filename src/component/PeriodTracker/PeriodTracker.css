@@ -1,29 +1,28 @@
 .period-tracker {
-    background-color: rgb(214, 145, 180);
+  background-color: rgb(214, 145, 180);
 }
 .tracker-inputs {
-    display: flex;
-    flex-direction: row ;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
-.box-1 {
-    flex: 1;
+.box {
+  margin: 20px;
 }
-
-.box-2 {
-    flex: 1;
-}
-
-.box-3 {
-    flex: 1;
+.tracking-section {
+  padding-bottom: 8px;
 }
 .track-btn {
-    margin-left: 45%;
-    height: 45px;
-    width: 150px;
-    cursor: pointer;
-    background-color: cornflowerblue;
-    border-radius: 20px;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 45px;
+  width: 300px;
+  cursor: pointer;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 8px 600px;
 }
