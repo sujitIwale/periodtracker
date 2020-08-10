@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class DatePicker extends Component {
   state = {
     periodDate: null,
+    Schedule:true
   };
   dateChange = (event) => {
     this.setState({ periodDate: event.target.value });
@@ -10,7 +11,11 @@ class DatePicker extends Component {
   passDate = (event) => {
     const newDate = new Date(`${event.target.value}`);
     this.props.getDate(newDate.getDate(), newDate.getMonth());
+    this.props.getSchedule();
   };
+  closeSchedule = () => {
+    this.setState({Schedule:false})
+  }
   render() {
     return (
       <div>
@@ -23,6 +28,7 @@ class DatePicker extends Component {
             onInput={this.passDate}
             onSubmit={this.passDate}
             style={style}
+            onClick={this.closeSchedule}
           />
         </div>
       </div>

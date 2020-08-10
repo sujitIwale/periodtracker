@@ -11,12 +11,14 @@ class PeriodTracker extends Component {
     date: null,
     submitted: false,
     month: null,
+    schedule:true
   };
   startTracking = () => {
     this.props.passPdays(this.state.pDays);
     this.props.passCycleDays(this.state.cycle);
     this.props.showSchedule();
     this.props.passDate(this.state.date, this.state.month);
+   
   };
   getPeriodDays = (days) => {
     this.setState({ pDays: days });
@@ -27,12 +29,17 @@ class PeriodTracker extends Component {
   getDate = (date, month) => {
     this.setState({ date: date, month: month });
   };
+  getSchedule =() => {
+    this.setState({schedule:false})
+    this.props.passSchedule();
+  }
+ 
   render() {
     return (
       <div className='period-tracker'>
         <div className='tracker-inputs'>
           <div className='box'>
-            <DatePicker getDate={this.getDate} />
+            <DatePicker getDate={this.getDate} getSchedule={this.getSchedule} />
           </div>
           <div className='box'>
             <PeriodDays getPeriodDays={this.getPeriodDays} />

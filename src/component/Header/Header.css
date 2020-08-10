@@ -2,6 +2,7 @@
   background-color: rgb(195, 161, 226);
   height: 60px;
   margin: 0px 0px;
+  position: sticky;
 }
 
 h2 {

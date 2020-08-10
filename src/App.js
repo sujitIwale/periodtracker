@@ -24,6 +24,9 @@ class App extends Component {
   passDate = (date, month) => {
     this.setState({ date: date, month: month });
   };
+  passSchedule = () => {
+    this.setState({schedule:false})
+  }
   render() {
     return (
       <div className='App'>
@@ -34,6 +37,7 @@ class App extends Component {
           passCycleDays={this.passCycleDays}
           passDate={this.passDate}
           showSchedule={this.showSchedule}
+          passSchedule={this.passSchedule}
         />
         {this.state.schedule && (
           <PeriodSchedule
@@ -41,6 +45,7 @@ class App extends Component {
             cycle={this.state.cycle}
             date={this.state.date}
             month={this.state.month}
+            schedule={this.state.schedule}
           />
         )}
       </div>
@@ -49,3 +54,5 @@ class App extends Component {
 }
 
 export default App;
+
+
