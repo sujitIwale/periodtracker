@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import Cal from '../Cal/cal';
 import './Calender.css';
 
 export class Calender extends Component {
@@ -34,14 +35,38 @@ export class Calender extends Component {
      {day: 29,style:''},
      {day: 30,style:''},
      {day: 31,style:''}   
-  ]
+  ],
+  months:[
+    {index:1,month:'January',nDays:31},
+    {index:2,month:'February',nDays:28},
+    {index:3,month:'March',nDays:31},
+    {index:4,month:'April',nDays:30},
+    {index:5,month:'May',nDays:31},
+    {index:6,month:'June',nDays:30},
+    {index:7,month:'July',nDays:31},
+    {index:8,month:'August',nDays:31},
+    {index:9,month:'September',nDays:30},
+    {index:10,month:'Octomber',nDays:31},
+    {index:11,month:'November',nDays:30},
+    {index:12,month:'December',nDays:31},
+  ],
+  week:[
+    {index:0,weekD:'sunday',i:''},
+    {index:1,weekD:'monday',i:''},
+    {index:2,weekD:'Tuesdsay',i:''},
+    {index:3,weekD:'Wednesday',i:''},
+    {index:4,weekD:'Thursday',i:''},
+    {index:5,weekD:'Friday',i:''},
+    {index:6,weekD:'Saturday',i:''},
+  ],
+  monthName:''
 } 
        
-   
+  monthName ='';   
 
    componentDidMount =() => {
     this.state.days.map((day,i) => {
-      if (day.day === this.props.date) {
+      if (day.day >= this.props.date && day.day <this.props.totalDays) {
         
         this.setState(state => {
           const days = state.days.map((date, j) => {
@@ -59,14 +84,16 @@ export class Calender extends Component {
        }
        return 0;
     })
+    this.state.months.map((month,i) => {
+      if (month.index === this.props.month) {
+        
+           this.setState({monthName:month.month})
+       }
+       return 0;
+    })
    
    }
-   showDate = () => {
-    console.log(this.state.days[30])
-   }
-   showDetails = () => {
-     return <h1>hello</h1>
-   }
+   
     render() {
         return (
             <div>
@@ -75,20 +102,17 @@ export class Calender extends Component {
                   <li class="prev">&#10094;</li>
                   <li class="next">&#10095;</li>
                   <li  onClick={this.showDate}>
-                    August<br/>
-                    <span style={{fontSize:'18px'}} >2017</span>
+                   {this.state.monthName} <br/>
+                    <span style={{fontSize:'18px'}} >{this.props.year} </span>
                   </li>
                 </ul>
               </div>
 
               <ul class="weekdays">
-                <li>Mon</li>
-                <li>Tue</li>
-                <li>Wed</li>
-                <li>Thu</li>
-                <li>Fri</li>
-                <li>Sat</li>
-                <li>Sun</li>
+              {this.state.week.map((week,i)=>(
+                <li>{week.weekD} </li>
+
+              ))}
               </ul>
 
               <ul class="days">  
@@ -97,6 +121,7 @@ export class Calender extends Component {
                 <li ><span className={day.style}>{day.day}</span></li> ))
               }
               </ul>
+              {/* <Cal /> */}
 
             </div>
         )

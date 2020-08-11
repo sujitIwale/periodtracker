@@ -11,6 +11,7 @@ class App extends Component {
     date: null,
     schedule: false,
     month: null,
+    year:null
   };
   passPdays = (days) => {
     this.setState({ pDays: days });
@@ -21,8 +22,8 @@ class App extends Component {
   showSchedule = () => {
     this.setState({ schedule: true });
   };
-  passDate = (date, month) => {
-    this.setState({ date: date, month: month });
+  passDate = (date, month,year) => {
+    this.setState({ date: date, month: month,year:year });
   };
   passSchedule = () => {
     this.setState({schedule:false})
@@ -45,6 +46,7 @@ class App extends Component {
             cycle={this.state.cycle}
             date={this.state.date}
             month={this.state.month}
+            year={this.state.year}
             schedule={this.state.schedule}
           />
         )}

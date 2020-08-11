@@ -10,7 +10,7 @@ class DatePicker extends Component {
   };
   passDate = (event) => {
     const newDate = new Date(`${event.target.value}`);
-    this.props.getDate(newDate.getDate(), newDate.getMonth());
+    this.props.getDate(newDate.getDate(), newDate.getMonth(),newDate.getFullYear());
     this.props.getSchedule();
   };
   closeSchedule = () => {
